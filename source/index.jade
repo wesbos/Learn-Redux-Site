@@ -2,61 +2,70 @@ extends layout
 
 block content
   header.top
+    p.desc 20 video tutorials to help you learn how to build JavaScript apps with React.js and Redux.
     h1
-      a(href="http://flexbox.io")
-        span.whatThe What The
-        span.flexbox FlexBox?!
-    //- p.desc 13 simple videos to help you <em>finally</em> learn FlexBox
-    p.desc A simple, free 20 video course that will help you master CSS Flexbox!
+      a(href="http://learnredux.com") Learn Redux
+    p.sub.desc In 3.5 hours, You'll build 'Reduxstagram' — a simple photo app that will simplify the core ideas behind Redux, React Router and React.js
 
-    form.signup(method="POST")
-      label(for="email")
-      input(type="email" name="email" placeholder="Email Address")
-      //- input(type="submit" value="Get videos + exercises")
-      input(type="submit" value="Send me the videos!")
-      p.details
-        | Get access to all 20 videos and download the exercises!
-      p.details Join <span class="sub-count">35,000+</span> others in learning with Wes Bos!
-    p.underline Get access to all 20 videos and download the exercises!
+  .sign-up-band
+    .inner
+      form.signup(method="POST")
+        .pricing
+          p.price
+            span.currency $
+            span.dollars 0
+            span.cents 00
+          p FREE
+        div
+          h2 Ready to take the course?
+          .input-wrap
+            input(type="email" name="email" placeholder="Email Address")
+            input(type="submit" value="Learn Redux!")
+          p.details <span class="sub-count">42,000+</span> others have learned with Wes Bos — welcome to the family!
+        div.what-youll-get
+          p: strong Start the course today! You'll get
+          ul
+            li Access to all <strong>20 videos</strong>
+            li All <strong>starter files</strong>
+            li <strong>Webpack</strong> Build Templates
+            li Stepped and <strong>finished solutions</strong>
+      .success-sign-up
+        p Success! Check your email for your access link. <br><strong>Mind showing some love?</strong> — I've spent over 100 hours producing this series and it would mean the world if you helped others know about it.</p>
+        include ./partials/social.jade
 
-    section.social
-      a(href="https://twitter.com/share" class="twitter-share-button" data-url="http://FlexBox.io" data-text="What The FlexBox?! A new video course by @wesbos → " data-related="wesbos") Tweet
-      a(href="https://twitter.com/wesbos" class="twitter-follow-button" data-show-count="true") Follow @wesbos
-      div(class="fb-like" data-href="http://flexbox.io" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false") Like
-      g:plusone()
+      .tech-logos
+        - each tech in ['redux','react','webpack','js','es6','npm','sentry']
+          p: img(src='/images/#{tech}.png')
 
+    .about
+      .half
+        h3 What is this?
+        p The <strong>first 13</strong> videos are aimed at understanding the fundamentals of Flexbox - we will take a deep dive into understanding rows, columns, axes, wrapping, alignment, centering and layout. The <strong>last 7</strong> are code alongs where we will build everything from a navigation to a mobile app layout entirely with Flexbox!
 
-  .about
-    .half
-      h3 What is this?
-      p The <strong>first 13</strong> videos are aimed at understanding the fundamentals of Flexbox - we will take a deep dive into understanding rows, columns, axes, wrapping, alignment, centering and layout. The <strong>last 7</strong> are code alongs where we will build everything from a navigation to a mobile app layout entirely with Flexbox!
+      .half
+        h3 Who is Wes Bos?
+        p
+          img(src="https://pbs.twimg.com/profile_images/623184294521929728/LUJ4qL8n.jpg" class="handsome")
+          | <a href="http://wesbos.com">Wes Bos</a> is a fullstack developer and educator from Hamilton, Canada. Wes loves to break down complex topics into short, tasty, little tutorials. He has contributed to Smashing Magazine, CSS Tricks and NetMag as well as released <a href="https://ReactForBeginners.com">React For Beginners</a>, <a href="http://SublimeTextBook.com">Sublime Text Power User</a> and <a href="http://commandlinepoweruser.com">Command Line Power User</a>.
 
-    .half
-      h3 Who is Wes Bos?
-      p
-        img(src="https://pbs.twimg.com/profile_images/623184294521929728/LUJ4qL8n.jpg" class="handsome")
-        | <a href="http://wesbos.com">Wes Bos</a> is a fullstack developer and educator from Hamilton, Canada. Wes loves to break down complex topics into short, tasty, little tutorials. He has contributed to Smashing Magazine, CSS Tricks and NetMag as well as released <a href="https://ReactForBeginners.com">React For Beginners</a>, <a href="http://SublimeTextBook.com">Sublime Text Power User</a> and <a href="http://commandlinepoweruser.com">Command Line Power User</a>.
+      .full.free
+        h3 Why is this free? Whats the catch?
+        p
+          img(src="https://media.getsentry.com/_static/4a7513416d386050dd8225159776fe81/getsentry/images/branding/svg/sentry-logotype-dark.svg" width="600")
+          | No catch! A big thanks to <a href="https://getsentry.com/welcome/" target="_blank">Sentry</a> for sponsoring my time to create these videos. <a href="https://getsentry.com/welcome/" target="_blank">Sentry</a> is provides JavaScript (among other languages) error tracking with the insights you need to pinpoint and fix bugs in your application. It's an invaluable tool that I use in many of my own projects and in video #17 I'll show you how to integrate it into a React application!
 
-  .examples
+  //- .examples
+    video(width="800" src="https://www.dropbox.com/s/59xx6vcez63lwbk/what-you-will-build.mp4?dl=1" loop mute autoplay)
     h3 What will you build?
-    p Here are just a few things you will build entirely with Flexbox
-    .example-figures
-      figure
-        img(src="/images/app.png")
-        figcaption A mobile app layout
-      figure
-        img(src="/images/grid.png")
-        figcaption A Flexbox Pricing Grid
-      figure
-        img(src="/images/form.png")
-        figcaption An inline booking form
+
+  include ./partials/social.jade
 
   section.the-videos
-    h3 The Videos
+    h3.title Watch The Videos
   .watch-wrap
     #watch
 
-  .reviews
+  //- .reviews
     h3 Some nice things people have said
 
     .tweets

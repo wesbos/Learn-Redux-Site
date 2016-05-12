@@ -40,9 +40,12 @@ const Video = React.createClass({
       this.context.router.push(`/view/${vid.id}`);
       $("html, body").animate({ scrollTop: $('#watch').position().top });
     } else  {
-      $("html, body").animate({ scrollTop: $('.signup').position().top }, 1000);
+      $("html, body").animate({ scrollTop: $('.signup').position().top }, 1000, function() {
+        const signup = document.querySelector('.signup');
+        signup.classList.add('wiggle');
+        setTimeout(() => signup.classList.remove('wiggle') ,1000)
+      });
       $('input[name=email]').focus();
-      $('p.underline').text('Looks like you aren\'t logged in. Lost your link? Enter your email again and I\'ll re-send the link.').show();
     }
   },
   render : function() {
@@ -94,7 +97,7 @@ const Viewer = React.createClass({
     var videoid = this.state.videoid;
 
     // var index = findIndex(this.state.videos,{id : this.state.videoid});
-    var index = this.state.videos.findIndex(video => video.id === this.state.videid);
+    var index = this.state.videos.findIndex(video => video.id === this.state.videoid);
 
     var prevVideo = this.state.videos[index - 1];
     var prevButton = (prevVideo ? <a onClick={this.goToVideo.bind(null,prevVideo.id)} href={`#/view/${prevVideo.id}`}>← {prevVideo.title}</a> : '');
@@ -140,7 +143,7 @@ const Viewer = React.createClass({
 var Player = React.createClass({
   generateURL : function() {
     // sorry about the whistling
-    return `https://www.youtube.com/embed/${this.props.videoid}?autoplay=${this.props.autoplay}&showinfo=0&rel=0&start=9`;
+    return `https://www.youtube.com/embed/${this.props.videoid}?autoplay=${this.props.autoplay}&showinfo=0&rel=0`;
   },
   render : function() {
     return (

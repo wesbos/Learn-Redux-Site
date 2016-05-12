@@ -51,24 +51,17 @@ gulp.task('scripts',function() {
     .pipe(p.sourcemaps.write('./'))
     .pipe(gulp.dest('./_build/js/'))
     .pipe(reload({stream:true}))
-    .pipe(p.notify({
-      title : 'Scripts Compiled!',
-      sound:false
-    }))
 });
 
 gulp.task('styles',function() {
   gulp.src(globs.styles , { base : 'source/css/' })
     .pipe(p.plumber({errorHandler: p.notify.onError("Error: <%= error.message %>")}))
+    .pipe(p.sourcemaps.init())
     .pipe(p.stylus())
     .pipe(p.autoprefixer())
+    .pipe(p.sourcemaps.write('.'))
     .pipe(gulp.dest('./_build/css/'))
     .pipe(reload({stream:true}))
-    .pipe(p.notify({
-      title : 'Styles Done!!',
-      sound : true,
-      message : 'ya man'
-    }))
 });
 
 gulp.task('templates',function() {
@@ -118,7 +111,7 @@ gulp.task('clean',function() {
 
 gulp.task('watch', ['browser-sync'] ,function() {
   gulp.watch(globs.scripts,['scripts']);
-  gulp.watch(globs.styles,['styles']);
+  gulp.watch('./**/*.styl',['styles']);
   gulp.watch(globs.templates,['templates']);
 });
 
@@ -128,7 +121,7 @@ gulp.task('deploy', function() {
     .pipe(p.sftp({
         host: 'bostype.com',
         user : 'bostypec',
-        remotePath : '/home3/bostypec/www/flexbox'
+        remotePath : '/home3/bostypec/www/redux'
     }));
 });
 

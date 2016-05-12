@@ -1,31 +1,29 @@
-blue = #2376AE
-yellow  = #FEFF00
+
+yellow  = #EAFA52
+lightyellow = lighten(yellow,60%)
+pink = #FF77FD
 purple = #C16ECF
-black = #323232
+black = #3F3F3F
+
 @import '_normalize'
 @import '_typography'
 
 body
   font-family sans-serif
-  background-attachment fixed 
+  background-attachment fixed
   -webkit-font-smoothing: antialiased;
-  background-image: linear-gradient(-170deg, blue 0%, purple 100%);
   &:before
     // HOT TIP: do this on the before element so it doesn't span 100% content height on mobile
-    background-image: linear-gradient(-170deg, blue 0%, purple 100%);
+    background-image:url('../images/tswirls.png'), linear-gradient(20deg, yellow 0%, pink 100%);
+    // background-image: radial-gradient(43% 100%, #FF77FD 0%, #EAFA52 100%, #FF4B4B 100%);
     content : ''
     display block
     position fixed
-    top 0 
+    top 0
     left 0
     right 0
     bottom 0
     z-index -1
-
-  
-h1,h2,h3,h4,h5, h6
-  font-weight normal
-  margin 0
 
 html
   font-size 10px
@@ -38,7 +36,6 @@ a
 
 p
   font-size 1.8rem
-  color white
   a
     color white
     text-decoration none
@@ -46,59 +43,11 @@ p
     position relative
     color black
 
-p a, h3
-  position relative
-  display inline-block
-  margin 0 auto
-  color white
-  z-index 1
-  &:before
-    content: '';
-    background: rgba(0,0,0,0.2);
-    display: inline-block;
-    position: absolute;
-    left: -2.5%;
-    padding: 1.5rem;
-    right: 0;
-    z-index: -1;
-    break-inside: avoid;
-    transition: all 0.1s;
-    transform: rotate(-1deg) skew(10deg);
-  &:nth-of-type(3n+1)
-    &:hover:before
-      transform rotate(-1deg) skew(-5deg)
-    &:before
-      transform rotate(1deg) skew(5deg)
-  &:nth-of-type(3n+2)
-    &:hover:before
-      transform rotate(1deg) skew(7deg)
-    &:before
-      transform rotate(-1deg) skew(-7deg)
-  &:nth-of-type(3n)
-    &:hover:before
-      transform rotate(-1deg) skew(-10deg)
-    &:before
-      transform rotate(1deg) skew(10deg)
-
 img
   max-width 100%
-  
+
 h1
-  text-transform uppercase
-  letter-spacing 1px
-  text-shadow 2px 2px 0 darken(blue, 20%), 0 0 10rem rgba(255, 255, 255, 0.4)
-  transform: rotate(-10deg);
   font-size 170px
-  text-shadow: 10px 10px 0px rgba(0,0,0,0.17);
-  margin -50px 0 -50px 0
-  padding 0
-  // transition all 0.1s
-  span
-    display block
-    &.flexbox
-      color yellow
-      position: relative;
-      transform: translateX(.5%);
   a
     color white
     text-decoration none
@@ -107,20 +56,75 @@ h1
 .desc
   font-size 22px
   line-height 1.6
+  color black
   letter-spacing 1px
-  text-shadow 2px 2px 0 darken(blue, 20%)
-  // text-transform uppercase
+  max-width 500px
+  display inline-block
+  &.sub
+    font-size 18px
+    max-width 700px
 
+/*
+  Header Band
+*/
 header.top
-  border-top 1rem solid darken(blue, 20%)
   text-align center
-  // background-attachment fixed
   color white
   padding 2rem
-  transition all 0.1s
   position relative
   overflow hidden
+  // padding-bottom 8rem
+  h1
+    display flex
+    justify-content center
+    line-height 0.8
+    text-shadow 1px 1px 4px alpha(black,40%)
+    letter-spacing 10px
+    font-weight 100
+    margin 0
+    a
+      border 3px solid white
+      flex 0
+      padding 3rem 4rem 1rem 4rem
+      box-shadow 0px 0px 0px 3px alpha(black,10%), inset 0px 0px 0px 3px alpha(black,10%)
 
+/*
+  Sign Up Band
+*/
+.sign-up-band
+  background white
+  background-image:url('../images/tswirls.png')
+  box-shadow 0 0 0 3px rgba(0,0,0,0.05)
+
+hr
+  border 0
+  border-bottom 1px solid lighten(grey,80%)
+
+.inner
+  max-width 900px
+  margin 0 auto
+
+.what-youll-get
+  p
+    font-size 2rem
+  ul
+    list-style square
+    font-size 1.2rem
+    padding 0 1.7rem
+    margin 0
+    line-height 2
+
+.tech-logos
+  display flex
+  justify-content center
+  align-items center
+  & > *
+    margin 2rem
+    font-size 0
+
+/*
+  Scaler
+*/
 .scaler
   width 100%
   position relative
@@ -129,9 +133,9 @@ header.top
     width 100%
     height 100%
     position absolute
-    top 0 
-    bottom 0 
-    right 0 
+    top 0
+    bottom 0
+    right 0
     left 0
 
 grey = #CBCBCB
@@ -139,7 +143,7 @@ grey = #CBCBCB
 .videos
   display flex
   flex-wrap wrap
-  margin 50px 0 
+  margin 50px 0
   border-radius 3px
   border 1px solid grey
   width 100%
@@ -195,7 +199,7 @@ grey = #CBCBCB
       margin-left 5px
       color:rgba(0,0,0,0.5)
       border-radius 4px
-    
+
 .video-details
   background rgba(0,0,0,0.2)
   padding 20px
@@ -209,63 +213,59 @@ grey = #CBCBCB
 
 
 .about
-  padding 3rem 0
-  overflow hidden
+  padding 3rem 0 3rem 0
   max-width 1200px
-  margin 0 auto
+  margin 0 auto 2rem auto
   display flex
   flex-wrap wrap
+  a
+    border-bottom 2px solid yellow
+    color darken(purple,60%)
+  h3
+    font-weight 700
+    font-size 3rem
+    margin-bottom 2rem
+    border-bottom 1px solid rgba(0,0,0,0.1)
+    padding-bottom 2rem
+    color black
   .half
     flex-basis 50%
     &:first-of-type
-      padding-right 20px
+      padding-right 4rem
     &:last-of-type
-      padding-left 20px
-        
+      padding-left 4rem
   p
     line-height 1.8
     margin-top 0
-    color white
-  h3
-    font-size 25px
-    &:before
-      bottom -5px
-      padding 2rem
+    font-weight 500
+
   img
     display block
     margin 0 auto
     width 100px
     float left
-    margin-right 2rem
-    border-radius 50%
+    margin-right 1rem
+
+.free
+  background white
+  padding 2rem
+  margin 2rem auto
+  box-shadow 0 0 0 5px rgba(0,0,0,0.05)
+  img
+    width 300px
+    padding 20px
+    margin-right 3rem
+
+.examples
+  video
+    box-shadow 0 0 0 5px rgba(0,0,0,0.05)
+    margin-top -20rem
+    background white url('../images/tswirls.png');
+    padding 10px
 
 .examples, .the-videos
   text-align center
   clear both
-
-.example-figures
-  margin 0 auto
-  max-width 1200px
-  // display flex
-  clear both
-  // align-items center
-  figure 
-    // flex-baiss 33.33%
-    width:calc(33.33% - 40px);
-    float left
-    margin:20px
-    padding:10px
-    border-radius 4px
-    background rgba(0,0,0,0.2)
-    text-align center
-    font-size 15px
-    color white
-  figcaption
-    padding-top 5px
-h3
-  text-align center
-  text-transform uppercase
-  margin-bottom 2rem
 
 .video-title
   font-size 1.5rem
@@ -287,7 +287,6 @@ section.deets
   // border-bottom 1px solid blue
   background darken(white, 3%)
   // margin-bottom 4rem
-  overflow hidden
   padding-top 5rem
   padding-bottom 1rem
   &.secondary
@@ -304,32 +303,75 @@ section.deets
 
 
 .signup
-  max-width 60rem
-  margin 2rem auto 1rem auto
   overflow hidden
-  background rgba(0,0,0,0.2)
-  padding:20px;
-  border-radius 5px
-  box-shadow inset 0 0 2px rgba(0,0,0,0.2)
+  background white
+  position relative
+  margin-top 10rem
+  margin-bottom -10rem
+  top -10rem
+  box-shadow 0 0 0 5px rgba(0,0,0,0.05)
+  display flex
+  align-items: center;
+  &.done
+    margin-bottom 0
+  & > *
+    padding 2rem
+    flex-grow 1
+
+  h2
+    font-size 3rem
+    margin-bottom 1rem
+    font-weight 100
+  .pricing
+    max-width 200px
+    border-right 1px solid lightgrey
+    margin-right 3rem
+    p
+      font-weight 100
+      display flex
+      align-items center
+      justify-content center
+      .currency
+        font-size 3rem
+      .dollars
+        font-size 8rem
+      .cents
+        align-self flex-start
+        font-size 1.5rem
+      span
+        line-height 0.5
   p
     margin 0
-    padding-top 20px
     clear both
-    font-size 16px
+    font-size 1.5rem
+    font-weight 400
+    padding-top 1rem
+    padding-bottom 1rem
+    strong
+      background lightyellow
+
+  .input-wrap
+    border:1px solid grey
+    display flex
+    width 100%
+    margin-bottom 1rem
   input
     background white
-    line-height 2
-    padding 1rem
+    padding 1.2rem
     font-size 2rem
     border 0
     outline 0
-    float left
     &[type="email"]
       width 60%
     &[type="submit"]
       width 40%
-      background yellow
-      color alpha(black, 0.9)
+      background:yellow url('../images/tswirls.png');
+      // text-transform uppercase
+      font-weight 600
+      color white
+      text-shadow 1px 1px 0 alpha(black, 0.2)
+      color black
+      border-left 1px solid grey
 
 section.social
   text-align center
@@ -347,6 +389,26 @@ section.social
   #twitter-widget-0
     margin-left 3rem
 
+
+.success-sign-up
+  background white
+  padding 1rem
+  display none
+  box-shadow 0 0 0 5px rgba(0,0,0,0.05)
+  margin-top 10rem
+  top -10rem
+  position relative
+  p
+    font-weight 100
+    font-size 2rem
+    line-height 2
+    color black
+    margin-top 0
+  section.social
+    text-align left
+    padding 0
+    & > *
+      display inline-block
 
 p.desc.success
   font-size 2rem
@@ -370,8 +432,8 @@ p.desc.success
 
 #watch
   max-width 1200px
-  background rgba(0,0,0,0.2)
-  padding 50px
+  background rgba(0,0,0,0.05)
+  padding 2rem
   border-radius 4px
 
 footer
@@ -405,8 +467,8 @@ footer
     max-width 49%
 
 .sub-count
-  border-bottom 1px solid yellow
-  
+  background lightyellow
+
 .reviews
   margin-top 4rem
   text-align center
@@ -417,10 +479,32 @@ footer
     align-items center
     justify-content center
 
+
+// Animations
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(20px, 0, 0);
+  }
+}
+
+.wiggle
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-iteration-count:1;
+
 @media all and (max-width:1200px)
   #watch
     padding 20px
-    
+
   .about
     padding 20px
 
@@ -435,36 +519,52 @@ footer
         margin-right 0
 
 @media all and (max-width:850px)
-  h1
-    font-size 100px
   section.deets
     p.desc
       font-size 2rem
+  .what-youll-get
+    width 100%
+    ul
+      margin 0
+      padding 0
+    li
+      width 49%
+      display inline-block
   .signup
+    flex-wrap wrap
     input
       font-size 1.3rem
-      padding 0.5rem
+      // padding 0.5rem
 
 @media all and (max-width:760px)
   .video
     flex-basis 100%
-  h1
-    font-size 50px
-    
+
   .about
     .half
       flex-basis 100%
       margin 10px 0
       padding 0 !important
 
+@media all and (max-width:650px)
+  .signup
+    .pricing
+      width 100%
+      border 0
+      max-width none
+    & > div
+      padding 10px
+
+  header.top
+    h1
+      font-size 90px
+      font-size 22vw
+
 @media all and (max-width:480px)
   .video
     a
       padding 15px
-  
-  .example-figures
-    figure
-      margin 5px 5px 20px 5px
+
 
 @media all and (max-width:420px)
   .signup
@@ -473,5 +573,6 @@ footer
       text-align center
       &:first-of-type
         margin-bottom 5px
+
 
 

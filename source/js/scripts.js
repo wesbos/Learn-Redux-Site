@@ -7,60 +7,6 @@ $(function() {
   // update the sub count
   $.getJSON('http://bostype.com/sendy/subscriberscount?i=1&l=1',function(data) { $('.sub-count').text(data.count) });
 
-  // fancy gradients 
-  var deg = -175;
-  var percent = 0;
-  
-  // window.setInterval(function(){
-
-  //   $('body').css({
-  //     'background-image' : 'linear-gradient('+deg+'deg, #2376AE 0%, #C16ECF 100%)'
-  //   });
-
-  //   deg+=0.5;
-  //   if(deg === 360) {
-  //     deg = 0;
-  //   }
-  // }, 2500);
-
-
-  $('header.top').on('mousemove',function(e){
-    
-    e.stopPropagation();
-
-
-    var el = $(this);
-    var w = el.outerWidth();
-    var h = el.outerHeight();
-    var x = e.pageX;
-    var y = e.pageY;
-    var xPercent = x / w;
-    var yPercent = y / h;
-
-    var walk = 40; // number of pixels to "walk"
-    var xWalk = Math.round(xPercent * walk - (walk / 2));
-    var yWalk = Math.round(yPercent * walk - (walk / 2));
-
-    $('h1').css({
-      'text-shadow' : xWalk + 'px '+yWalk+'px 0px rgba(0, 0, 0, 0.17)'
-    });
-  });
-
-  $(window).on('deviceorientation',function(e) {
-    var x = e.originalEvent.gamma;  // left to right
-    var y = e.originalEvent.beta; // front to back
-    
-    if(window.orientation > 0) {
-      var y = e.originalEvent.gamma * -1;  // left to right
-      var x = e.originalEvent.beta; // front to back      
-    }
-
-    $('h1').css({ 'text-shadow' : x + 'px '+y+'px 0px rgba(0, 0, 0, 0.17)'
-    });
-    
-  });
-
-
   $('form.signup').on('submit',function(e){
     e.preventDefault();
     var email = $(this).find('input[name="email"]').val();
@@ -72,11 +18,11 @@ $(function() {
         email : email,
         list : 'Ct7zsQu3UIBOKuXcvE583Q',
         boolean : true,
-        flexbox : "true"
+        redux : 'true'
       },
       success : function(res) {
-        
-      } 
+
+      }
     });
 
     // send out the email
@@ -85,23 +31,24 @@ $(function() {
     });
 
     // side it up
-    $('form.signup, p.naw').slideUp();
+    $('form.signup').slideUp();
 
     // tell the what is next
-    $('p.desc').html('Check your email for your access link. <br><strong>Mind showing some love?</strong><br>Share this page — this allows me to produce more great videos and books!').addClass('success');
+    $('.success-sign-up').show();
 
     // mark as a conversion in google analytics
-    ga('send', 'event', 'download','what the flexbox');
+    ga('send', 'event', 'download','redux');
     // mark as conversion in FB
     window._fbq = window._fbq || [];
     window._fbq.push(['track', 'Signup', {}]);
-    
+
   });
 
   // When the page loads, check if they are authed
   if(localStorage.hash) {
     $('.signup input, .signup label').hide();
-    $('p.details:first').text('You are authenticated! Happy Watching!');
+    $('.signup').addClass('done');
+    $('form.signup').html('<p class="center">You are authenticated! Watch the videos below. Enjoy!</p>');
   }
 
 });
@@ -125,7 +72,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 // Google Analytics
-ga('create', 'UA-65558692-1', 'auto');
+ga('create', 'UA-65558692-2', 'auto');
 ga('send', 'pageview');
 
 // Facebook Ads
