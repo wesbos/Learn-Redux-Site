@@ -1,18 +1,16 @@
-// Quick way to import old JS into browserify
-
 module.exports = function() {
 
 $(function() {
 
   // update the sub count
-  $.getJSON('http://bostype.com/sendy/subscriberscount?i=1&l=1',function(data) { $('.sub-count').text(data.count) });
+  $.getJSON('https://bostype.com/sendy/subscriberscount?i=1&l=1',function(data) { $('.sub-count').text(data.count) });
 
   $('form.signup').on('submit',function(e){
     e.preventDefault();
     var email = $(this).find('input[name="email"]').val();
 
     // Add them to the list
-    $.ajax('http://bostype.com/sendy/subscribe', {
+    $.ajax('https://bostype.com/sendy/subscribe', {
       type : 'POST',
       data : {
         email : email,
@@ -26,7 +24,7 @@ $(function() {
     });
 
     // send out the email
-    $.getJSON('http://wesbos.com/mc/send-flexbox.php?callback=?&email=' + encodeURIComponent(email),function(res){
+    $.getJSON('https://wesbos.com/mc/send-redux.php?callback=?&email=' + encodeURIComponent(email),function(res){
       console.log(res);
     });
 

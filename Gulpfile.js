@@ -119,9 +119,9 @@ gulp.task('watch', ['browser-sync'] ,function() {
 gulp.task('deploy', function() {
   gulp.src('_build/**/*', { base : '_build/' })
     .pipe(p.sftp({
-        host: 'bostype.com',
+        host: 'ftp.bostype.com',
         user : 'bostypec',
-        remotePath : '/home3/bostypec/www/redux'
+        remotePath : '/home3/bostypec/www/learnredux'
     }));
 });
 

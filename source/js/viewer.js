@@ -24,6 +24,24 @@ const Videos = React.createClass({
   }
 });
 
+/*
+  Starter Files Component
+*/
+const StarterFiles = React.createClass({
+  getInitialState() {
+    return {
+      starterFiles: data.starterFiles
+    }
+  },
+  render() {
+    return (
+      <div className="starterFiles">
+        <a href={this.state.starterFiles.URL}  target="_blank">{this.state.starterFiles.description}</a>
+      </div>
+    )
+  }
+});
+
 
 /*
   Listed Video Component
@@ -126,6 +144,7 @@ const Viewer = React.createClass({
           <p>{video.description}</p>
           {this.renderNavButtons()}
         </div>
+        { !!localStorage.hash ? <StarterFiles /> : null }
         <Videos {...this.props} videos={this.state.videos} />
       </div>
 
@@ -180,13 +199,6 @@ const Main = React.createClass({
   // View the key prop so the viewer will re-render on route update
   render() {
     return <div>{React.cloneElement(this.props.children, { key: this.props.params.videoid })}</div>
-  },
-  componentWillMount() {
-    var oldURLs = new RegExp(/auth|view/, 'gi');
-    if(window.location.hash && window.location.hash.match(oldURLs)) {
-      const url = window.location.hash.replace('#','');
-      this.context.router.push(`${url}`);
-    }
   },
   contextTypes: {
     location: React.PropTypes.object.isRequired,

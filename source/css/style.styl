@@ -1,9 +1,9 @@
-
 yellow  = #EAFA52
 lightyellow = lighten(yellow,60%)
 pink = #FF77FD
 purple = #C16ECF
 black = #3F3F3F
+grey = #CBCBCB
 
 @import '_normalize'
 @import '_typography'
@@ -84,7 +84,8 @@ header.top
     margin 0
     a
       border 3px solid white
-      flex 0
+      flex 1 0
+      max-width 625px
       padding 3rem 4rem 1rem 4rem
       box-shadow 0px 0px 0px 3px alpha(black,10%), inset 0px 0px 0px 3px alpha(black,10%)
 
@@ -101,7 +102,7 @@ hr
   border-bottom 1px solid lighten(grey,80%)
 
 .inner
-  max-width 900px
+  max-width 960px
   margin 0 auto
 
 .what-youll-get
@@ -138,7 +139,7 @@ hr
     right 0
     left 0
 
-grey = #CBCBCB
+
 
 .videos
   display flex
@@ -147,6 +148,7 @@ grey = #CBCBCB
   border-radius 3px
   border 1px solid grey
   width 100%
+  margin 2rem 0
 
 .video
   flex 1
@@ -187,7 +189,6 @@ grey = #CBCBCB
     font-size 17px
     line-height: 1.6;
     margin-top: -2px;
-    font-family 'Oswald'
     text-transform uppercase
     letter-spacing 1px
     .duration
@@ -255,6 +256,7 @@ grey = #CBCBCB
     width 300px
     padding 20px
     margin-right 3rem
+    margin-bottom 4rem
 
 .examples
   video
@@ -388,6 +390,8 @@ section.social
     top 1px
   #twitter-widget-0
     margin-left 3rem
+  iframe + iframe
+    margin-left 2rem
 
 
 .success-sign-up
@@ -501,6 +505,18 @@ footer
   animation-fill-mode: both;
   animation-iteration-count:1;
 
+// starter files
+.starterFiles
+  margin 0
+  padding 0
+  a
+    color white
+    background rgba(0,0,0,0.2)
+    text-decoration none
+    font-size 2rem
+    padding 1rem
+    display inline-block
+
 @media all and (max-width:1200px)
   #watch
     padding 20px
@@ -560,6 +576,13 @@ footer
       font-size 90px
       font-size 22vw
 
+  .tech-logos
+    flex-wrap wrap
+    & > *
+      max-width 70px
+      margin 10px
+
+
 @media all and (max-width:480px)
   .video
     a
@@ -573,6 +596,5 @@ footer
       text-align center
       &:first-of-type
         margin-bottom 5px
-
 
 

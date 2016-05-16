@@ -1,163 +1,167 @@
 module.exports = {
+  starterFiles: {
+    URL: 'https://github.com/wesbos/Learn-Redux-Starter-Files',
+    description: 'Download the Starter Files and Stepped Solutions on GitHub →'
+  },
   videos : [
+  {
+    title: 'Setting Up Our Webpack Environment',
+    description: 'Use NPM and Webpack to get our local environment setup for development.',
+    id: 'hmwBow1PUuo',
+    number: 1,
+    duration: "5:17"
+  },
 
-    {
-      title : 'Welcome to What The FlexBox?!',
-      description : 'This is a 20 video series aimed at getting you to absolutely master CSS FlexBox. Grab the exercises and videos at http://flexbox.io and dive on in!',
-      id : 'Vj7NZ6FiQvo',
-      duration : '1:13',
-      number : 1
-    },
-    {
-      title : 'Introduction to Flexbox',
-      description : 'Up and running with Flexbox. Understanding display:flex; and the relationship between flex container and the flex items. ',
-      id : 'ND8SjPJOk_M',
-      duration : '4:20',
-      number : 2
-    },
+  {
+    title: 'App Layout + Component Setup',
+    description: 'Let\'s talk about what needs to happen in terms of React.js components and layout.',
+    id: 'Nw3B7I-Vbn8',
+    number: 2,
+    duration: "8:22"
+  },
 
-    {
-      title : 'Working with Flexbox flex-direction',
-      description : 'It\'s key to understand the main and cross axes in flexbox. Switch the layout from row to column with flex-direction.',
-      id : '_vEjcueG3zY',
-      duration : '5:04',
-      number : 3
-    },
+  {
+    title: 'Creating our Single and PhotoGrid components',
+    description: 'Use React to create the two main components in our React app - Single nad PhotoGrid.',
+    id: '237g5mcT8Ho',
+    number: 3,
+    duration: "3:34"
+  },
 
-    {
-      title : 'Wrapping elements with Flexbox',
-      description : 'Working with flex items that have widths and wrap onto new lines or columns with flex-wrap.',
-      id : 'TYBN9VR3F2E',
-      duration : '8:16',
-      number : 4
-    },
+  {
+    title: 'Setting up React Router',
+    description: 'Integrate React Router to handle page changes into our React app',
+    id: 'iNzMIoBNnNU',
+    number: 4,
+    duration: "5:23"
+  },
 
-    {
-      title : 'Flexbox Ordering',
-      description : 'Easily reorder DOM elements with flexbox ordering.',
-      id : 'ZoBZoJ8Udw4',
-      duration : '6:15',
-      number : 5
-    },
+  {
+    title: 'Creating our Redux Store',
+    description: 'Let\'s start talking about Redux and how we will create a Store to hold our data.',
+    id: 'G1CSA5AyDvI',
+    number: 5,
+    duration: "7:12"
+  },
 
-    {
-      title : 'Flexbox Alignment + Centering with justify-content',
-      description : 'Learn how to align items on the main axis in a number of possible ways.',
-      id : 'CYVgbHVCvNA',
-      duration : '8:30',
-      number : 6
-    },
+  {
+    title: 'All About Redux Actions',
+    description: 'Before we can update our store, we need to learn about what actions are.',
+    id: 'vUkpA_wtQLo',
+    number: 6,
+    duration: "7:24"
+  },
 
-    {
-      title : 'Flexbox Alignment + Centering with align-items',
-      description : 'Vertically center items along the cross axis.',
-      id : 'bsVHag6qijY',
-      duration : '5:53',
-      number : 7
-    },
+  {
+    title: 'All About Redux Reducers',
+    description: 'Reducers handle the updating of our state in our store and are a fundamental concept in Redux.',
+    id: 'sAzh8t1H0p4',
+    number: 7,
+    duration: "6:46"
+  },
 
-    {
-      title : 'Flexbox Alignment + Centering with align-content',
-      description : 'Vertically center multiple rows of content or align them within your flex container.',
-      id : 'zM0PeFIPk20',
-      duration : '6:38',
-      number : 8
-    },
+  {
+    title: 'Integrating our Store with React Router',
+    description: 'Let\'s get everyone on the same page and let React Router know about our store.',
+    id: 'KzWkdTSTZ84',
+    number: 8,
+    duration: "4:45"
+  },
 
-    {
-      title : 'Flexbox Alignment + Centering with align-self',
-      description : 'Override align-items property on individual flex items for custom alignment.',
-      id : 'PikdAGM8cww',
-      duration : '2:35',
-      number : 9
-    },
+  {
+    title: 'Understanding The Reducer\'s Job',
+    description: 'How does the Reducer update state? What is it\'s job?',
+    id: 'ok7no2HVN48',
+    number: 9,
+    duration: "4:40"
+  },
 
-    {
-      title : 'Understanding Flexbox sizing with the flex property',
-      description : 'Easily scale up or down elements with the flex property',
-      id : 'DzAacFWSx0c',
-      duration : '4:43',
-      number : 10
-    },
+  {
+    title: ' Accessing Dispatch and State with Redux',
+    description: 'We already learned about actions, how can we then dispatch these actions to allow the reducer to update our state?',
+    id: 'l2IOqeubsBw',
+    number: 10,
+    duration: "7:58"
+  },
 
-    {
-      title : 'Finally understanding Flexbox flex-grow, flex-shrink and flex-basis',
-      description : 'Get full control the size of your elements flex-grow, flex-shrink and flex-basis',
-      id : 'CFgeJq4l1YM',
-      duration : '10:14',
-      number : 11
-    },
+  {
+    title: ' Displaying Redux State inside our Components',
+    description: 'Let\'s take a break from actions, action creators and reducers for a second a see how we can pull our state into the components at the level we wish.',
+    id: 'lD46f78B4FE',
+    number: 11,
+    duration: "11:51"
+  },
 
-    {
-      title : 'How Flexbox\'s flex-basis and wrapping work together',
-      description : 'Set an flex-basis width or height and have items wrap and stretch automatically.',
-      id : '39_bMMvrWlQ',
-      duration : '8:18',
-      number : 12
-    },
+  {
+    title: ' Updating State with Reducers',
+    description: 'Once the action has been dispatched, we can use reducers to update our state.',
+    id: 'BWN-9bF51BU',
+    number: 12,
+    duration: "9:13"
+  },
 
-    {
-      title : 'Cross Browser Flexbox Support + Autoprefixer!',
-      description : 'Old Syntax? Vendor prefixes? Create a build step with Gulp.js',
-      id : 'qBvW8KC9bb4',
-      duration : '11:52',
-      number : 13
-    },
+  {
+    title: ' Displaying the Single Photo Component',
+    description: 'We already are displaying a list of photos, but what about when you click through to the Single photo component?',
+    id: 'h4N_FiFULLs',
+    number: 13,
+    duration: "5:50"
+  },
 
-    {
-      title : 'Pure Flexbox navigation code along',
-      description : 'Let\'s create a mobile ready navigation with Flexbox.',
-      id : '0jL1SLSPFbk',
-      duration : '10:43',
-      number : 14
-    },
+  {
+    title: ' Displaying and Adding Comments',
+    description: 'Let\'s pull in the data from our other store and display it there.',
+    id: '57eIrqJ44pk',
+    number: 14,
+    duration: "5:52"
+  },
 
-    {
-      title : 'Mobile content reordering with Flexbox',
-      description : 'Reorder DOM elements when you hit a certain screen size.',
-      id : 'npSH1_7w89k',
-      duration : '12:34',
-      number : 15
-    },
+  {
+    title: ' Updating Comment State in our Store',
+    description: 'Once the comments are displayed, how can we add new comments and delete existing ones?',
+    id: 'v0DdCELM-k0',
+    number: 15,
+    duration: "5:49"
+  },
 
-    {
-      title : 'Nesting Flexbox for vertical and horizontal centering with Flexbox',
-      description : 'Handling complicated layouts by nesting Flexbox',
-      id : 'qWL-7ih9Kw0',
-      duration : '16:00',
-      number : 16
-    },
+  {
+    title: ' Redux Reducer Composition',
+    description: 'When your state gets a little complicated, it\'s best to use composition to narrow down the peice of state you are trying to update.',
+    id: '9P91R6TgdRI',
+    number: 16,
+    duration: "8:57"
+  },
 
-    {
-      title : 'Flexbox Pricing Grid',
-      description : 'Creating an equal height pricing grid where the buttons stick to the bottom. Easy vertical centering with Flexbox.',
-      id : 'VMQuTXb9m_U',
-      duration : '8:08',
-      number : 17
-    },
+  {
+    title: ' Error Tracking and Insights with Sentry',
+    description: 'How do you get info on errors that happen in the browser of your user? We integrate Sentry intro our application to track errors and get context on what happened.',
+    id: 'D060ACRPj6I',
+    number: 17,
+    duration: "11:29"
+  },
 
-    {
-      title : 'Flexbox Equal height columns and leftover elements',
-      description : 'Have column width equal it\'s tallest sibling. Learn about handling leftover flex items.',
-      id : 'mpqNRMkxACc',
-      duration : '7:33',
-      number : 18
-    },
+  {
+    title: ' Hot Reloading Redux Reducers with webpack',
+    description: 'Hot reloading is like live reload, but for your JavaScript!',
+    id: 'aXG1CRVnDdM',
+    number: 18,
+    duration: "3:07"
+  },
 
-    {
-      title : 'Flexbox single line form',
-      description : 'Quickly and easily create vertically aligned and inline form with Flexbox.',
-      id : 'QTIP-BnI3oQ',
-      duration : '5:59',
-      number : 19
-    },
+  {
+    title: ' Learning Redux Dev Tools',
+    description: 'Learn all about the power of the Redux dev tools to inspect and time travel with your actions.',
+    id: 'Jy-xXB8O12I',
+    number: 19,
+    duration: "5:59"
+  },
 
-    {
-      title : 'Create a mobile app layout with Flexbox',
-      description : 'Create a flexible mobile app layout without widths, heights, fixed positioning or floats',
-      id : 'TrsrNZo0pOY',
-      duration : '11:35',
-      number : 20
-    }
+  {
+    title: ' Wrap Up and Next Steps',
+    description: 'You did it! Your first Redux application - what should you learn next?',
+    id: 'CpEYKd5NC0A',
+    number: 20,
+    duration: "3:31"
+  }
   ] // end videos array
 }
