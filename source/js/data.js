@@ -22,7 +22,7 @@ module.exports = {
 
   {
     title: 'Creating our Single and PhotoGrid components',
-    description: 'Use React to create the two main components in our React app - Single nad PhotoGrid.',
+    description: 'Use React to create the two main components in our React app - Single and PhotoGrid.',
     id: '237g5mcT8Ho',
     number: 3,
     duration: "3:34"
