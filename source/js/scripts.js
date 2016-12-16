@@ -24,7 +24,8 @@ $(function() {
     });
 
     // send out the email
-    $.getJSON('https://wesbos.com/mc/send-redux.php?callback=?&email=' + encodeURIComponent(email),function(res){
+    // $.getJSON('https://wesbos.com/mc/send-redux.php?callback=?&email=' + encodeURIComponent(email), function(res){
+    $.getJSON('https://reactforbeginners.com/api/course/'+encodeURIComponent(email)+'/RDX', function(res){
       console.log(res);
     });
 
